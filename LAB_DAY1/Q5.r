@@ -6,9 +6,6 @@ sd(age)
 mean(fat)
 median(fat)
 sd(fat)
-#boxplot
-boxplot(age,fat)
-#scatter plot
-scatter.smooth(age,fat)
-#qplot
-qqplot(age,fat)
+boxplot(age, fat, names = c("Age", "Fat"))
+plot(age, fat)
+qqplot(age, fat)
