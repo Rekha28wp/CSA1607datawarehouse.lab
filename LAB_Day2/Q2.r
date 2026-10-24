@@ -1,0 +1,11 @@
+x <- sort(c(1,1,5,5,5,5,5,8,8,20,20,20,20,20,20,21,21,21,21,25,25,25,25,25,28,28,30,10,10,10,10,12,14,14,14,15,15,15,15,15,15,18,18,18,18,18))
+bins <- split(x, ceiling(seq_along(x)/3))
+print(bins)
+mean_smooth <- lapply(bins, function(b) rep(mean(b), length(b)))
+boundary_smooth <- lapply(bins, function(b) {
+  bounds <- range(b)
+  sapply(b, function(v) bounds[which.min(abs(bounds-v))])
+})
+print(mean_smooth)
+print(boundary_smooth)
+hist(x, main="Histogram of Prices", xlab="Price", col="skyblue")
