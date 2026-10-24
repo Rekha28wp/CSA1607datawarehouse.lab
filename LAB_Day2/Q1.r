@@ -1,1 +1,6 @@
-
+d <- data.frame(A=c(18,2,20), B=c(22,28,10), C=c(20,40,40))
+cov(d$B, d$C)
+cov(d)
+cor(d$B, d$C)
+cor(d)
+chisq.test(matrix(c(18,22,20,2,28,40,20,10,40), nrow=3, byrow=TRUE))
